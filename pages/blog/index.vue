@@ -28,7 +28,6 @@
           <NuxtLink :to="post._path" class="block">
           <div class="masonry-item-text p-4">
             <h2 class="text-xl font-semibold mb-2">{{ post.title }}</h2>
-            <!-- Limiting the height of the description and making it responsive -->
             <p v-if="post.description" class="text-gray-600 line-clamp-3">{{ post.description }}</p>
             <ClientOnly >
               <article v-if="post.tags" class="text-xs mt-2">

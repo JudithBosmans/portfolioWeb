@@ -1,8 +1,37 @@
 {
   "homepage_title": "Judith Bosmans",
   "homepage_name": "Judith",
-  "homepage_subtitle": "////",
-  "thumbnail": "/img/pierre-chatel-innocenti-2MoEcGNUj-I-unsplash.jpg",
+  "homepage_subtitle": "",
+  "thumbnail": {
+    "imagesHomepage": [
+      {
+        "img": "./img/alexandre-lallemand-vn9s31R3n4Q-unsplash.jpg",
+        "img2": "./img/egor-myznik-4LKNEltLkU4-unsplash.jpg",
+        "img3": "./img/jake-noble-yF8r-mICZ78-unsplash.jpg",
+        "img4": "./img/kajetan-powolny-_u7b6IVZV8Q-unsplash.jpg",
+        "img5": "./img/alexandre-lallemand-vn9s31R3n4Q-unsplash.jpg",
+        "img6": "./img/egor-myznik-4LKNEltLkU4-unsplash.jpg",
+        "img7": "./img/jake-noble-yF8r-mICZ78-unsplash.jpg",
+        "img8": "./img/kajetan-powolny-_u7b6IVZV8Q-unsplash.jpg",
+        "img9": "./img/alexandre-lallemand-vn9s31R3n4Q-unsplash.jpg",
+        "img10": "./img/egor-myznik-4LKNEltLkU4-unsplash.jpg",
+        "img11": "./img/jake-noble-yF8r-mICZ78-unsplash.jpg",
+        "img12": "./img/kajetan-powolny-_u7b6IVZV8Q-unsplash.jpg",
+        "img13": "./img/alexandre-lallemand-vn9s31R3n4Q-unsplash.jpg",
+        "img14": "./img/egor-myznik-4LKNEltLkU4-unsplash.jpg",
+        "img15": "./img/jake-noble-yF8r-mICZ78-unsplash.jpg",
+        "img16": "./img/kajetan-powolny-_u7b6IVZV8Q-unsplash.jpg",
+        "img17": "./img/alexandre-lallemand-vn9s31R3n4Q-unsplash.jpg",
+        "img18": "./img/egor-myznik-4LKNEltLkU4-unsplash.jpg",
+        "img19": "./img/jake-noble-yF8r-mICZ78-unsplash.jpg",
+        "img20": "./img/kajetan-powolny-_u7b6IVZV8Q-unsplash.jpg",
+        "img21": "./img/alexandre-lallemand-vn9s31R3n4Q-unsplash.jpg",
+        "img22": "./img/egor-myznik-4LKNEltLkU4-unsplash.jpg",
+        "img23": "./img/jake-noble-yF8r-mICZ78-unsplash.jpg",
+        "img24": "./img/kajetan-powolny-_u7b6IVZV8Q-unsplash.jpg"
+      }
+    ]
+  },
   "body": "",
   "homepageimage": true
 }

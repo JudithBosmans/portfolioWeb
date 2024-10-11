@@ -5,15 +5,15 @@ body {
 }
 .light-mode body {
   background-color: #e2e3e5;
-  color: #161717;
+  color: #000000;
 }
 .dark-mode body {
-  background-color: #161715;
+  background-color: #ffffff;
   color: #000000;
 }
 .gray-mode body {
   background-color: #c9d0d3;
-  color: #433422;
+  color: #000000;
 }
 
 /* Active link */
