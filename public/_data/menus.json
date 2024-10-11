@@ -1,0 +1,11 @@
+{
+  "submenu": {
+    "pagenavigation_on_off": false,
+    "itemnavigation_on_off": false,
+    "blognavigation_on_off": true,
+    "foldernavigation_on_off": true
+  },
+  "mainmenu": {
+    "mainavigation_on_off": true
+  }
+}

@@ -1,0 +1,127 @@
+# when using the default proxy server port
+local_backend: true
+backend:
+  name: git-gateway
+  branch: main # Branch to update (optional; defaults to master)
+
+publish_mode: editorial_workflow
+
+media_folder: public/img
+public_folder: /img
+
+collections:
+  - name: 'page'
+    label: 'Page'
+    description: 'All general pages.'
+    folder: 'content/page'
+    format: 'frontmatter'
+    create: true # Allow users to create new documents in this collection
+    slug: '{{year}}-{{month}}-{{day}}-{{slug}}'
+    preview_path: page/{{slug}} # {{slug}} will compile to "2000-01-my-new-post"
+    editor:
+      preview: true
+    fields:
+      - { label: 'Layout', name: 'layout', widget: 'hidden', default: 'default' }
+      - { label: 'Title', name: 'title', widget: 'string' }
+      - { label: 'Subtitle', name: 'subtitle', widget: 'string', required: false  }
+      - { label: 'Publish Date', name: 'date', widget: 'datetime', hint: 'Date of publication' }
+      - { label: 'Introduction', name: 'introduction', widget: 'string', required: false }
+      - { label: 'Description', name: 'description', widget: 'string', required: false }
+      - { label: 'Body', name: 'body', widget: 'markdown' }
+      - label: "Image gallery"
+        name: "imagegallery"
+        widget: "object"
+        collapsed: true
+        fields:
+         - { label: 'Show Gallery', name: 'showgallery', widget: 'boolean', default: true, hint: 'Activate a gallery on this page.', required: false}
+         - { label: 'Carousel / grid', name: 'carouselgrid', widget: 'select', options: ['carousel', 'grid'], default: 'carousel', hint: 'Show this gallery as a carousel or as a grid', required: false }
+         - { label: 'Gallery title', name: 'gallerytitle', widget: 'string', required: false}
+         - { label: 'Gallery text', name: 'gallerytext', widget: 'markdown', required: false}
+         - { label: 'GalleryImages',
+              name: 'galleryImages',
+              widget: 'list',
+              summary: '{{fields.image}}',
+              field: {label: Image, name: Galleryimage, widget: image},
+            }
+      - { label: 'Featured Image', name: 'thumbnail', widget: 'image' }
+      - { label: 'Tags', name: 'tags', widget: 'list', add_to_top: true, required: false }
+      - { label: 'Included in main navigation (experimental)', name: 'included', widget: 'boolean', default: true, hint: 'Show this item on the main navigation.', required: false}  
+      - { label: 'Position in navigation (experimental)', name: 'numbernavigation', widget: 'number', value_type: 'int', min: 0, max: 100, step: 10, hint: 'The higher the number, the higher this item will be placed in the main navigation.', required: false }
+      - { label: 'Promoted in lists (experimental)', name: 'promoted', widget: 'number', default: '0', hint: 'The higher the number, the higher this item will be placed in the lists and overviews.', required: false}   
+
+  - name: 'blog'
+    label: 'Blog'
+    description: 'All blog entries.'
+    folder: 'content/blog'
+    format: 'frontmatter'
+    create: true
+    slug: '{{year}}-{{month}}-{{day}}-{{slug}}'
+    preview_path: blog/{{slug}} # {{slug}} will compile to "2000-01-my-new-post"
+    editor:
+      preview: true
+    summary: 'Version: {{version}} - {{title}} {{commit_author}}'  
+    fields:
+      - { label: 'Layout', name: 'layout', widget: 'hidden', default: 'default' }
+      - { label: 'Title', name: 'title', widget: 'string' }
+      - { label: 'Publish Date', name: 'date', widget: 'datetime' }
+      - { label: 'Description', name: 'description', widget: 'string' }
+      - { label: 'Body', name: 'body', widget: 'markdown' }
+      - { label: 'Featured Image', name: 'thumbnail', widget: 'image' }
+      - { label: 'Author', name: 'author', widget: 'string' }
+      - { label: 'Tags', name: 'tags', widget: 'list', add_to_top: true, required: false }
+      - { label: 'Promoted in lists (experimental)', name: 'promoted', widget: 'number', default: '0', hint: 'Make this item appear higher in the overview lists.', required: false}
+
+  - name: 'settings'
+    label: 'Settings'
+    description: 'Settings for the application.'
+    editor:
+      preview: true
+    files:
+      - name: 'general'
+        label: 'Site Settings'
+        file: '/public/_data/settings.json'
+        description: 'General Site Settings'
+        fields:
+          - { label: 'Global title', name: 'site_title', widget: 'string' }
+          - { label: 'Global subtitle', name: 'site_subtitle', widget: 'string' }
+          - { label: 'Copyright indication', name: 'copyright', widget: 'string' }
+      - name: 'homepage'
+        label: 'Homepage Settings'
+        file: '/public/_data/homepage.json'
+        description: 'Homepage Settings'
+        fields:
+          - { label: 'Show Homepage Image of Promoted list', name: 'homepageimage', widget: 'boolean', default: true, hint: 'Activate the image on the home page or the list with promoted items.', required: false}
+          - { label: 'Homepage title', name: 'homepage_title', widget: 'string' }
+          - { label: 'Homepage subtitle', name: 'homepage_subtitle', widget: 'string' }
+          - { label: 'Homepage text', name: 'body', widget: 'markdown', required: false }
+          - { label: 'Homepage Image', name: 'thumbnail', widget: 'image' }
+  
+
+      - name: 'menu'
+        label: 'Menus'
+        file: '/public/_data/menus.json'
+        fields:
+          - label: 'Main Menu Settings'
+            name: mainmenu
+            widget: 'object'
+            fields:
+              - name: 'mainavigation_on_off'
+                label: 'Main navigation on / off'
+                widget: 'boolean'
+                default: true
+                hint: 'Turn the main navigation on or off'
+          - label: 'Sub Menu Settings'
+            name: submenu
+            widget: 'object'
+            fields:
+              - name: 'pagenavigation_on_off'
+                label: 'Page navigation on / off'
+                widget: 'boolean'
+                default: true
+                hint: 'Turn the page navigation on or off'
+              - name: 'blognavigation_on_off'
+                label: 'Last blogs in navigation on / off'
+                widget: 'boolean'
+                default: true
+                hint: 'Turn the folder navigation on or off'  
+      
