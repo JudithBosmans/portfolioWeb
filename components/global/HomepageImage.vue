@@ -50,9 +50,7 @@ function shouldMakeTransparent(index) {
 
 <template>
   <!-- Main Grid and Content -->
-  <div
-    class="flex items-center justify-center h-screen overflow-hidden bg-white"
-  >
+  <div class="flex items-center justify-center h-screen overflow-hidden">
     <div class="grid grid-cols-6 grid-rows-4 gap-14">
       <div
         v-for="(image, index) in images"

@@ -1,5 +1,5 @@
 <template>
-  <div class="mt-5" v-if="items.folder !== 'page'">
+  <div class="mt-5" v-if="items.folder !== 'page'" id="masonryBackkgroundC">
     <MasonryWall :items="items" :ssr-columns="1" :gap="16">
       <template #default="{ item, index }">
         <div :style="{ height: `${item}px` }" class="masonry-item">
