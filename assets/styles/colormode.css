@@ -8,6 +8,10 @@ body,
   color: rgb(218, 54, 54);
 }
 
+.page-body {
+  color: black;
+}
+
 /* Active link */
 .router-link-active {
   border-bottom: 2px solid gray;
