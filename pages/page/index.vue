@@ -4,7 +4,7 @@
       <Drawer />
     </div>
     <main class="mx-auto max-w-4xl space-y-6 px-4 mb-20">
-      <div class="text-xl font-bold">Pages</div>
+      <div class="text-xl font-bold">PORTFOLIO</div>
       <div class="masonry">
         <div class="masonry-item" v-for="post in posts" :key="post.slug">
           <div class="masonry-image">

@@ -3,8 +3,8 @@ body,
 .light-mode body,
 .dark-mode body,
 .gray-mode body {
-  background-color: #000000;
-  color: rgba(255, 255, 255, 0.8);
+  background-color: #ffffff;
+  color: rgba(39, 39, 39);
 }
 
 /* Active link */

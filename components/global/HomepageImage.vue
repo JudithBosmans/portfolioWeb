@@ -11,7 +11,6 @@ const navigations = ref({});
 // Fetch JSON data for homepage
 onMounted(async () => {
   try {
-    // Fetch homepage data
     const homepageResponse = await fetch("/_data/homepage.json");
     if (!homepageResponse.ok) {
       throw new Error(`HTTP error! status: ${homepageResponse.status}`);
@@ -24,7 +23,6 @@ onMounted(async () => {
       images.value = Object.values(imagesArray);
     }
 
-    // Fetch navigation data
     const navigationResponse = await fetch("/_data/menus.json");
     if (!navigationResponse.ok) {
       throw new Error(`HTTP error! status: ${navigationResponse.status}`);
@@ -49,25 +47,38 @@ function shouldMakeTransparent(index) {
 </script>
 
 <template>
-  <!-- Main Grid and Content -->
   <div class="flex items-center justify-center h-screen overflow-hidden">
-    <div class="grid grid-cols-6 grid-rows-4 gap-14">
+    <div class="grid grid-cols-6 grid-rows-4 gap-14 relative z-20">
       <div
         v-for="(image, index) in images"
         :key="index"
-        class="grid-item aspect-square overflow-hidden"
+        class="grid-item aspect-square overflow-hidden relative"
       >
+        <router-link :to="`/page`" v-if="!shouldMakeTransparent(index)">
+          <img
+            :src="image"
+            alt="Homepage Image"
+            :class="[
+              'w-full h-full object-cover animate-flash',
+              shouldMakeTransparent(index) ? 'transparent' : '',
+            ]"
+            class="z-30"
+          />
+        </router-link>
+        <!-- Add an image without router-link but transparent and with no pointer events -->
         <img
+          v-else
           :src="image"
-          alt="Homepage Image"
+          alt="Transparent Image"
           :class="[
-            'w-full h-full object-cover animate-flash',
-            shouldMakeTransparent(index) ? 'opacity-0' : '',
+            'w-full h-full object-cover animate-flash pointer-none opacity-0',
           ]"
+          class="z-30"
         />
       </div>
     </div>
 
+    <!-- Overlay content, pushed to the back with lower z-index -->
     <div
       class="z-10 absolute flex flex-col justify-center items-center h-full w-full"
     >
@@ -107,7 +118,8 @@ function shouldMakeTransparent(index) {
   object-fit: cover;
 }
 
-hr {
-  opacity: 0.1;
+.w-full.h-full.object-cover.animate-flash:hover {
+  transform: scale(1.2);
+  transition: transform 0.2s;
 }
 </style>

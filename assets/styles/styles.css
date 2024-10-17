@@ -22,26 +22,28 @@ li {
 
 /******************** HOMEPAGE ******************** */
 
-.image {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  opacity: 1;
-}
-
 /* First row image transparency settings: odd-indexed images transparent */
 .grid-item:nth-child(odd) .image {
   /* 1st, 3rd, 5th elements */
   opacity: 0;
+  pointer-events: none;
 }
 
 /* Second row image transparency settings: even-indexed images transparent */
 .grid-item:nth-child(2n) .image {
   /* 2nd, 4th, 6th, 8th, 10th elements */
   opacity: 0;
+  pointer-events: none;
+}
+
+.transparent {
+  opacity: 0;
+  pointer-events: none;
+}
+.pointer-none {
+  pointer-events: none;
 }
 
 .pagePrev {
-  background-color: red;
   text-decoration: none;
 }

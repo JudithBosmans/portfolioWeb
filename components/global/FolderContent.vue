@@ -24,7 +24,7 @@
             <NuxtLink :to="item._path" class="text-xl font-semibold mb-2">
               {{ item.title }}
             </NuxtLink>
-            <p v-if="item.description" class="text-gray-600 line-clamp-3">
+            <p v-if="item.description" class="text-black line-clamp-3">
               {{ item.description }}
             </p>
             <ul v-if="item.tags" class="text-xs mt-2">
