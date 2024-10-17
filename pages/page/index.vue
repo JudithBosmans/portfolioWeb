@@ -4,7 +4,7 @@
       <Drawer />
     </div>
     <main class="mx-auto max-w-4xl space-y-6 px-4 mb-20">
-      <div class="text-xl font-bold">PORTFOLIO</div>
+      <div class="text-4xl">PORTFOLIO</div>
       <div class="masonry">
         <div class="masonry-item" v-for="post in posts" :key="post.slug">
           <div class="masonry-image">
@@ -18,7 +18,7 @@
           </div>
           <NuxtLink :to="post._path" class="block">
             <div class="masonry-item-text p-4">
-              <h2 class="text-xl font-semibold mb-2">{{ post.title }}</h2>
+              <h2 class="text-xl mb-2">{{ post.title }}</h2>
               <p v-if="post.description" class="text-gray-600 line-clamp-3">
                 {{ post.description }}
               </p>

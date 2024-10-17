@@ -2,9 +2,10 @@
 body,
 .light-mode body,
 .dark-mode body,
-.gray-mode body {
+.gray-mode body,
+.text-xl {
   background-color: #ffffff;
-  color: rgba(39, 39, 39);
+  color: rgb(218, 54, 54);
 }
 
 /* Active link */

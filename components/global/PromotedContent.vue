@@ -64,7 +64,7 @@ function handleImageError(index) {
 
             <NuxtLink :to="item._path" class="block">
               <div class="masonry-item-text p-4">
-                <h2 class="text-xl font-semibold mb-2">{{ item.title }}</h2>
+                <h2 class="text-xl mb-2">{{ item.title }}</h2>
                 <p v-if="item.description" class="text-gray-600 line-clamp-3">
                   {{ item.description }}
                 </p>

@@ -94,7 +94,7 @@ function shouldMakeTransparent(index) {
         v-else-if="settings && settings.thumbnail"
         class="text-center p-4 lg:p-20"
       >
-        <h1 class="text-4xl font-bold">{{ settings.homepage_title }}</h1>
+        <h1 class="text-4xl">{{ settings.homepage_title }}</h1>
         <h2 class="text-lg mt-3">{{ settings.homepage_subtitle }}</h2>
         <p class="text-sm opacity-80">{{ settings.body }}</p>
       </div>
