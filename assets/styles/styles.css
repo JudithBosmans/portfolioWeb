@@ -15,9 +15,17 @@ hr {
   margin-top: 1.5em;
   margin-bottom: 1.5em;
 }
+
 ul,
 li {
   list-style: none;
+  margin-top: 10px;
+}
+
+li:hover,
+svg:hover {
+  color: rgb(138, 39, 39);
+  font-weight: 600;
 }
 
 /******************** HOMEPAGE ******************** */

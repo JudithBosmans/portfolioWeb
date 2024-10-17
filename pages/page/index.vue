@@ -3,8 +3,18 @@
     <div class="pr-5">
       <Drawer />
     </div>
-    <main class="mx-auto max-w-4xl space-y-6 px-4 mb-20">
+    <main class="mx-auto max-w-4xl space-y-6 px-4">
       <div class="text-4xl">PORTFOLIO</div>
+      <div class="text-s">
+        Hi there, welcome to my portfolio. I am a student MIND at Luca school of
+        arts, with a bachelors degree in Multimedia and Creative Technologies
+        from the Eramsus School of Brussels. Further, I'm currently working as a
+        developper at AKQA. I'm very passionat about design, coding and
+        creativity.
+        <br />
+        <br />
+        But don't take my word for it, take a look for yourself!
+      </div>
       <div class="masonry">
         <div class="masonry-item" v-for="post in posts" :key="post.slug">
           <div class="masonry-image">

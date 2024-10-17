@@ -30,7 +30,7 @@ if (data.value) {
       :key="folder"
       class="pt-2"
     >
-      <ul class="">
+      <ul>
         <li v-for="(file, index) in files" :key="index">
           <a :href="file._path">{{ file.title || file._path }}</a>
         </li>

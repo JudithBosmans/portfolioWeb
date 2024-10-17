@@ -33,7 +33,7 @@ function formatDate(date) {
 </script>
 
 <template>
-  <div>
+  <div class="navigation-hamburger">
     <div v-for="(files, folder) in groupedBlogFiles" :key="folder" >
       <ul>
         <li v-for="(file, index) in files" :key="index" class="pb-3">

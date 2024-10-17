@@ -2,9 +2,6 @@
   <div>
     <div class="footer text-xs mt-5">
       <div class="flex container">
-        <div class="flex basis-11/12">
-          <ColorMode />
-        </div>
         <div class="flex basis-1/12">
           <div class="flex-1 basis-4/12">
             <NuxtLink to="/">

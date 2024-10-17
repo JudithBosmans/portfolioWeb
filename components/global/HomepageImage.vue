@@ -48,7 +48,7 @@ function shouldMakeTransparent(index) {
 
 <template>
   <div class="flex items-center justify-center h-screen overflow-hidden">
-    <div class="grid grid-cols-6 grid-rows-4 gap-14 relative z-20">
+    <div class="grid grid-cols-6 grid-rows-4 gap-20 relative z-20">
       <div
         v-for="(image, index) in images"
         :key="index"
@@ -65,7 +65,6 @@ function shouldMakeTransparent(index) {
             class="z-30"
           />
         </router-link>
-        <!-- Add an image without router-link but transparent and with no pointer events -->
         <img
           v-else
           :src="image"
@@ -78,7 +77,6 @@ function shouldMakeTransparent(index) {
       </div>
     </div>
 
-    <!-- Overlay content, pushed to the back with lower z-index -->
     <div
       class="z-10 absolute flex flex-col justify-center items-center h-full w-full"
     >

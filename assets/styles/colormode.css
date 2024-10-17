@@ -3,24 +3,32 @@ body,
 .light-mode body,
 .dark-mode body,
 .gray-mode body,
-.text-xl {
+.text-xl,
+.drawer {
   background-color: #ffffff;
   color: rgb(218, 54, 54);
 }
 
-.page-body {
+.page-body,
+.text-s {
   color: black;
 }
 
 /* Active link */
 .router-link-active {
   border-bottom: 2px solid gray;
+  background-color: #ffffff;
+  color: rgb(218, 54, 54);
 }
 .dark-mode .router-link-active {
   border-bottom: 2px solid rgb(228, 88, 46);
+  background-color: #ffffff;
+  color: rgb(218, 54, 54);
 }
 .gray-mode .router-link-active {
   border-bottom: 2px solid rgb(231, 67, 46);
+  background-color: #ffffff;
+  color: rgb(218, 54, 54);
 }
 /* input */
 textarea,
