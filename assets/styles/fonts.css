@@ -17,6 +17,13 @@
 
 .subDividers {
   font-weight: 800;
+  font-family: "Switzer", sans-serif;
+}
+
+.textBody-pages,
+.introPage {
+  font-family: "Switzer", sans-serif;
+  font-weight: 300;
 }
 
 .montserrat-bold {
@@ -32,11 +39,6 @@
   font-weight: 800;
   font-style: normal;
   text-transform: uppercase;
-}
-
-.introPage {
-  font-family: "Antic Didone", serif;
-  font-weight: 600;
 }
 
 .roboto-thin {

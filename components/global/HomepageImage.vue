@@ -59,7 +59,7 @@ function shouldMakeTransparent(index) {
             :src="image"
             alt="Homepage Image"
             :class="[
-              'w-full h-full object-cover animate-flash',
+              'homepageImage w-full h-full object-cover animate-flash',
               shouldMakeTransparent(index) ? 'transparent' : '',
             ]"
             class="z-30"
