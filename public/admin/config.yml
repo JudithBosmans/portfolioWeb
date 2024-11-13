@@ -79,7 +79,7 @@ collections:
     files:
       - name: 'general'
         label: 'Site Settings'
-        file: '/public/_data/settings.json'
+        file: '/public/data/settings.json'
         description: 'General Site Settings'
         fields:
           - { label: 'Global title', name: 'site_title', widget: 'string' }
@@ -87,7 +87,7 @@ collections:
           - { label: 'Copyright indication', name: 'copyright', widget: 'string' }
       - name: 'homepage'
         label: 'Homepage Settings'
-        file: '/public/_data/homepage.json'
+        file: '/public/data/homepage.json'
         description: 'Homepage Settings'
         fields:
           - { label: 'Show Homepage Image of Promoted list', name: 'homepageimage', widget: 'boolean', default: true, hint: 'Activate the image on the home page or the list with promoted items.', required: false}
@@ -99,7 +99,7 @@ collections:
 
       - name: 'menu'
         label: 'Menus'
-        file: '/public/_data/menus.json'
+        file: '/public/data/menus.json'
         fields:
           - label: 'Main Menu Settings'
             name: mainmenu

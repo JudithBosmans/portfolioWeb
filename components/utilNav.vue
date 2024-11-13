@@ -14,7 +14,7 @@ import { ref } from 'vue';
 
 const settings = ref({});
 // Use useFetch to load the JSON data from the public folder
-const { data, error } = await useFetch('/_data/settings.json');
+const { data, error } = await useFetch('/data/settings.json');
 
 // Set the data to the settings ref
 if (data.value) {

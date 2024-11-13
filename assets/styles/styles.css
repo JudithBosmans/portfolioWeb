@@ -67,4 +67,18 @@ svg:hover {
   transform: scale(1.1);
   -webkit-transition-duration: 0.2s;
   -webkit-transition-timing-function: ease;
+  pointer-events: auto;
+}
+
+.modal-state:checked + .modal {
+  opacity: 1;
+  visibility: visible;
+}
+
+.modal-state:checked + .modal .modal__inner {
+  top: 0;
+}
+
+.modal__close span:hover {
+  background-color: #aaa;
 }

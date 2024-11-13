@@ -1,17 +1,17 @@
 <script setup>
-import { ref, onMounted } from "vue";
+import { ref, onMounted, onUnmounted } from "vue";
 
-// Refs for settings and navigation data
 const settings = ref(null);
 const isLoading = ref(true);
 const hasError = ref(false);
 const images = ref([]);
 const navigations = ref({});
+const pulsingIndex = ref([]);
+let pulseInterval = null;
 
-// Fetch JSON data for homepage
 onMounted(async () => {
   try {
-    const homepageResponse = await fetch("/_data/homepage.json");
+    const homepageResponse = await fetch("/data/homepage.json");
     if (!homepageResponse.ok) {
       throw new Error(`HTTP error! status: ${homepageResponse.status}`);
     }
@@ -23,7 +23,7 @@ onMounted(async () => {
       images.value = Object.values(imagesArray);
     }
 
-    const navigationResponse = await fetch("/_data/menus.json");
+    const navigationResponse = await fetch("/data/menus.json");
     if (!navigationResponse.ok) {
       throw new Error(`HTTP error! status: ${navigationResponse.status}`);
     }
@@ -31,11 +31,38 @@ onMounted(async () => {
     navigations.value = navigationJson;
 
     isLoading.value = false;
+
+    // Start pulsing and set a timeout to stop after 4 seconds
+    startRandomPulsing();
+    setTimeout(stopPulsing, 4000);
   } catch (error) {
     hasError.value = true;
     console.error("Error loading settings or navigations:", error);
   }
 });
+
+onUnmounted(() => {
+  clearInterval(pulseInterval);
+});
+
+function startRandomPulsing() {
+  pulseInterval = setInterval(() => {
+    pulsingIndex.value = getRandomIndices(8, images.value.length);
+  }, 500);
+}
+
+function stopPulsing() {
+  clearInterval(pulseInterval);
+  pulsingIndex.value = []; // Clear pulsing indices to stop animation
+}
+
+function getRandomIndices(count, max) {
+  const indices = new Set();
+  while (indices.size < count) {
+    indices.add(Math.floor(Math.random() * max));
+  }
+  return Array.from(indices);
+}
 
 function shouldMakeTransparent(index) {
   const numCols = 6;
@@ -59,8 +86,9 @@ function shouldMakeTransparent(index) {
             :src="image"
             alt="Homepage Image"
             :class="[
-              'homepageImage w-full h-full object-cover animate-flash',
+              'homepageImage w-full h-full object-cover',
               shouldMakeTransparent(index) ? 'transparent' : '',
+              pulsingIndex.includes(index) ? 'pulse-loop' : '',
             ]"
             class="z-30"
           />
@@ -70,7 +98,7 @@ function shouldMakeTransparent(index) {
           :src="image"
           alt="Transparent Image"
           :class="[
-            'w-full h-full object-cover animate-flash pointer-none opacity-0',
+            'imageHome w-full h-full object-cover animate-flash pointer-none opacity-0',
           ]"
           class="z-30"
         />
@@ -92,7 +120,7 @@ function shouldMakeTransparent(index) {
         v-else-if="settings && settings.thumbnail"
         class="text-center p-4 lg:p-20"
       >
-        <h1 class="text-4xl">{{ settings.homepage_title }}</h1>
+        <h1 class="text-4xl tracking-wider">{{ settings.homepage_title }}</h1>
         <h2 class="text-lg mt-3">{{ settings.homepage_subtitle }}</h2>
         <p class="text-sm opacity-80">{{ settings.body }}</p>
       </div>
@@ -116,8 +144,25 @@ function shouldMakeTransparent(index) {
   object-fit: cover;
 }
 
-.w-full.h-full.object-cover.animate-flash:hover {
-  transform: scale(1.2);
+.imageHome {
   transition: transform 0.2s;
+}
+
+.imageHome:hover {
+  transform: scale(1.2);
+}
+
+@keyframes pulse-loop {
+  0%,
+  100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0;
+  }
+}
+
+.pulse-loop {
+  animation: pulse-loop 1.5s infinite;
 }
 </style>

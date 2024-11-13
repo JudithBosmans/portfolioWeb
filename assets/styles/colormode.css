@@ -6,7 +6,6 @@ body,
 .text-xl,
 .drawer,
 .subDividers {
-  background-color: #ffffff;
   color: rgb(218, 54, 54);
 }
 
@@ -15,8 +14,7 @@ body,
   color: black;
 }
 
-/* Active link */
-.router-link-active {
+/* Active link .router-link-active {
   border-bottom: 2px solid gray;
   background-color: #ffffff;
   color: rgb(218, 54, 54);
@@ -30,7 +28,7 @@ body,
   border-bottom: 2px solid rgb(231, 67, 46);
   background-color: #ffffff;
   color: rgb(218, 54, 54);
-}
+} */
 /* input */
 textarea,
 input,

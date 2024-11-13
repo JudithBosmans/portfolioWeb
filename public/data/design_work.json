@@ -1,0 +1,28 @@
+{
+  "designWork": {
+    "work1": {
+      "placeholderImg": "./img/sketches/1.png",
+      "title": "Flower+ Mockup",
+      "course": "Design V - ehb",
+      "project": "Flower+",
+      "expl": "LoremNadat Daedalus klaar was met het bouwen van het labyrind voor de minotaurus, sloot king Minos hem en zijn zoon Icarus op in zijn kasteel. Dit zodat niemand de layout van het labyrind zou te weten komen. Na enkele jaren proberen Daedalus en Icarus te ontsnappen, Icarus vliegt te dicht bij de zon, de wax in zijn vleugels smelt en hij stort in de zee.",
+      "image": "./img/sketches/1.png"
+    },
+    "work2": {
+      "placeholderImg": "./img/sketches/1.png",
+      "title": "Flower+ Mockup",
+      "course": "Design V - ehb",
+      "project": "Flower+",
+      "expl": "LoremNadat Daedalus klaar was met het bouwen van het labyrind voor de minotaurus, sloot king Minos hem en zijn zoon Icarus op in zijn kasteel. Dit zodat niemand de layout van het labyrind zou te weten komen. Na enkele jaren proberen Daedalus en Icarus te ontsnappen, Icarus vliegt te dicht bij de zon, de wax in zijn vleugels smelt en hij stort in de zee.",
+      "image": "./img/sketches/1.png"
+    },
+    "work3": {
+      "placeholderImg": "./img/sketches/1.png",
+      "title": "Flower+ Mockup",
+      "course": "Design V - ehb",
+      "project": "Flower+",
+      "expl": "LoremNadat Daedalus klaar was met het bouwen van het labyrind voor de minotaurus, sloot king Minos hem en zijn zoon Icarus op in zijn kasteel. Dit zodat niemand de layout van het labyrind zou te weten komen. Na enkele jaren proberen Daedalus en Icarus te ontsnappen, Icarus vliegt te dicht bij de zon, de wax in zijn vleugels smelt en hij stort in de zee.",
+      "image": "./img/sketches/1.png"
+    }
+  }
+}

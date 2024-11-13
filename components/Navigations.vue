@@ -26,7 +26,7 @@ import { ref } from "vue";
 
 const navigations = ref({});
 // Use useFetch to load the JSON data from the public folder
-const { data, error } = await useFetch("/_data/menus.json");
+const { data, error } = await useFetch("/data/menus.json");
 
 // Set the data to the navigations ref
 if (data.value) {
